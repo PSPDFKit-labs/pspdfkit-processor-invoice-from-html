@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        src: url(./Inter-Regular.ttf) format("woff2");
+      }
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        src: url(./Inter-Bold.ttf) format("woff2");
+      }
+
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Invoice {{ invoiceNumber }}</h1>
+    <div style="display: flex; justify-content: space-between">
+      <div>
+        {{#companyDetails}} {{ . }}<br />
+        {{/companyDetails}}
+      </div>
+      <div>
+        {{#customerDetails}} {{ . }}<br />
+        {{/customerDetails}}
+      </div>
+    </div>
+
+    <div style="margin-top: 7em">
+      <table style="width: 100%">
+        <tbody>
+          <tr style="font-weight: bold">
+            <td style="width: 40%">Item</td>
+            <td style="width: 20%; text-align: right">Price per unit</td>
+            <td style="width: 10%; text-align: right">Qty</td>
+            <td style="width: 20%; text-align: right">Price</td>
+          </tr>
+          {{#items}}
+          <tr>
+            <td>{{ item }}</td>
+            <td style="text-align: right">{{ pricePerUnit }}$</td>
+            <td style="text-align: right">{{ quantity }}</td>
+            <td style="text-align: right">{{ price }}$</td>
+          </tr>
+          {{/items}}
+          <tr style="height: 5em; vertical-align: bottom">
+            <td></td>
+            <td></td>
+            <td style="font-weight: bold; text-align: right">Total</td>
+            <td style="text-align: right">{{ total }}$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
