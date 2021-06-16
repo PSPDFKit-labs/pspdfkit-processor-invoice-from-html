@@ -2,7 +2,7 @@
 
 This is a small project in Node.js which creates invoices from an HTML template using [PSPDFKit Processor](https://pspdfkit.com/server/processor/pdf-generation/).
 
-See the accompanying blog post at https://pspdfkit.com/blog/2021/creating-invoices-from-html-with-pspdfkit-processor/.
+See the accompanying blog post at https://pspdfkit.com/blog/2021/how-to-generate-pdf-from-html-with-nodejs.
 
 ### How-to
 
